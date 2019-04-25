@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## 写在前面
 
-You can use the [editor on GitHub](https://github.com/natureStory/nature.github.com/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+行路咫尺间，思绪已千年。切莫停止思考，谨记，谨记。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 最近的学习目标
 
-### Markdown
+1. web核心基础巩固
+2. react源码阅读学习
+3. nodejs+mongoDB创建在线todo list
+4. 尝试electron
+5. 阅读学习《JavaScript数据结构与算法》
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 时间之外的往诗
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+	    《汉宫春》
+  梅雨时节，忆江边纸鹞，如似盈蝶。
+     无端风雨，孕得灵秀淑媛。
+   长洲月华，灯初上，相映成雪。
+  旧光景，或因新人，得添几许美愿。
+清浅小洼如镜，碎步似流萤，觅得归途。
+     忧怅落花终去，空余残香。
+   晴川历历，对江叹，何处故梦？
+  细思处，落庭纷瑛，无心轻挑灯花。
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 个人github和博客地址
 
-### Jekyll Themes
+[github](https://github.com/natureStory)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/natureStory/nature.github.com/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[简书博客](https://www.jianshu.com/u/7ca6647c9b0e)
