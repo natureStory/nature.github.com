@@ -2,7 +2,7 @@ class CompNav extends HTMLElement {
     static get template() {
         return `
              <nav id="comp-nav" class="default-primary-color">
-                <span class="nav-title text-primary-color">nature's Blog</span>
+                <span class="nav-title text-primary-color">natureStory's Blog</span>
                 <span class="blog-title secondary-text-color">我的博客</span>
                 <div class="header-nav-list">
                     <a href="index.asp">主页</a>
@@ -12,7 +12,7 @@ class CompNav extends HTMLElement {
                 <div class="skin-btn-box">
                     <div class="kite-line default-primary-color"></div>
                     <div class="kite">
-                        <div class="default-primary-color"></div>
+                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -34,9 +34,9 @@ class CompNav extends HTMLElement {
     }
 
     connectedCallback() {
-        document.querySelector('#comp-nav .blog-title').innerText = document.title;
+        this.querySelector('.blog-title').innerText = document.title;
         document.addEventListener("scroll", this.render);
-        document.querySelector('#comp-nav .kite').addEventListener("click", this.kiteClick);
+        this.querySelector('.kite').addEventListener("click", this.kiteClick);
     }
 
     disconnectedCallback() {
@@ -45,10 +45,10 @@ class CompNav extends HTMLElement {
     }
 
     kiteClick = () => {
-        document.querySelector('#comp-nav .skin-btn-box').className = "skin-btn-box active";
+        this.querySelector('.skin-btn-box').className = "skin-btn-box active";
         this.changeSkin();
         setTimeout(() => {
-            document.querySelector('#comp-nav .skin-btn-box').className = "skin-btn-box";
+            this.querySelector('.skin-btn-box').className = "skin-btn-box";
         }, 500);
     };
 
@@ -68,9 +68,9 @@ class CompNav extends HTMLElement {
 
     render = () => {
         if (this.scrollTop > 240) {
-            document.querySelector('#comp-nav').className = 'default-primary-color active';
+            this.querySelector('#comp-nav').className = 'default-primary-color active';
         } else {
-            document.querySelector('#comp-nav').className = 'default-primary-color';
+            this.querySelector('#comp-nav').className = 'default-primary-color';
         }
     }
 }

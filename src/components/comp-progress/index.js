@@ -58,7 +58,7 @@ class CompProgress extends HTMLElement {
     }
 
     render = () => {
-        document.querySelector('#comp-progress .progress').style.width = this.widthPercentage;
+        this.querySelector('.progress').style.width = this.widthPercentage;
     }
 }
 
