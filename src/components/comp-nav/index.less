@@ -23,8 +23,54 @@
         opacity: 0;
     }
     .header-nav-list {
+        margin-right: 60px;
         a {
             margin-right: 20px;
+        }
+    }
+    .skin-btn-box {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        width: 60px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: scaleY(1.5);
+        transition: all 0.5s;
+        .kite-line {
+            height: 50px;
+            width: 2px;
+        }
+        .kite {
+            display: flex;
+            flex-wrap: wrap;
+            width: 14px;
+            height: 14px;
+            transform: rotate(45deg);
+            filter: opacity(0.4);
+            cursor: pointer;
+            transition: all 0.5s;
+            &>div {
+                width: 50%;
+                height: 50%;
+                &:nth-child(1) {
+                    background: red;
+                }
+                &:nth-child(2) {
+                    background: purple;
+                }
+                &:nth-child(3) {
+                    background: orange;
+                }
+                &:nth-child(4) {
+                    background: green;
+                }
+            }
+        }
+        &.active {
+            top: -10px;
         }
     }
     // 仅仅做动画
@@ -37,6 +83,9 @@
         .blog-title {
             transform: scale(1);
             opacity: 1;
+        }
+        .kite {
+            filter: opacity(0.8);
         }
     }
 }
