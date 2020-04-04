@@ -1,0 +1,1 @@
+import './comp-progress/index.js';
