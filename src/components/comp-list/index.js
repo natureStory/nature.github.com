@@ -1,4 +1,4 @@
-import listData from '../../data/listData.js';
+// import listData from '../../data/listData.json';
 
 class CompList extends HTMLElement {
     static get template() {
@@ -13,7 +13,8 @@ class CompList extends HTMLElement {
         this.innerHTML = CompList.template;
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        const listData = await fetch('./src/data/listData.json').then(data => data.json()).then(data => data);
         this.querySelector('#comp-list').innerHTML = listData.map(item => {
             return `
                 <comp-list-article

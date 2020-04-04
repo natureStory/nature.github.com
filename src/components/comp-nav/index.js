@@ -1,7 +1,7 @@
 class CompNav extends HTMLElement {
     static get template() {
         return `
-             <nav id="comp-nav" class="default-primary-color">
+             <nav id="comp-nav">
                 <span class="nav-title text-primary-color">natureStory's Blog</span>
                 <span class="blog-title secondary-text-color">我的博客</span>
                 <div class="header-nav-list">
@@ -68,9 +68,9 @@ class CompNav extends HTMLElement {
 
     render = () => {
         if (this.scrollTop > 240) {
-            this.querySelector('#comp-nav').className = 'default-primary-color active';
+            this.querySelector('#comp-nav').className = 'active';
         } else {
-            this.querySelector('#comp-nav').className = 'default-primary-color';
+            this.querySelector('#comp-nav').className = '';
         }
     }
 }

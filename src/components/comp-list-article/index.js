@@ -1,7 +1,3 @@
-import data from './data.json';
-
-console.log(data);
-
 class CompListArticle extends HTMLElement {
     static get template() {
         return `
