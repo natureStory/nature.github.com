@@ -5,6 +5,7 @@
     line-height: 60px;
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s;
     .nav-title {
         padding-left: 20px;
         font-weight: bold;
@@ -16,10 +17,26 @@
         width: 300px;
         margin-left: -150px;
         text-align: center;
+        transition: all 0.5s;
+        transform: scale(0);
+        transform-origin: 50% 0;
+        opacity: 0;
     }
     .header-nav-list {
         a {
             margin-right: 20px;
+        }
+    }
+    // 仅仅做动画
+    &.active {
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 0 10px rgba(14, 14, 14, .26);
+        .nav-title {
+            color: #757575;
+        }
+        .blog-title {
+            transform: scale(1);
+            opacity: 1;
         }
     }
 }

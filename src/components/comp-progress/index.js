@@ -14,10 +14,11 @@ class CompProgress extends HTMLElement {
     // 元素创建但还没附加到document时执行，通常用来初始化状态，事件监听，创建影子DOM。
     constructor() {
         super();
-        // 闭包写法
+        // 封闭式写法
         // const shadowRoot = this.attachShadow({mode: 'open'});
         // shadowRoot.innerHTML = template;
         this.innerHTML = CompProgress.template;
+        this.timer = null;
     }
 
     get scrollTop() {
@@ -57,7 +58,7 @@ class CompProgress extends HTMLElement {
     }
 
     render = () => {
-        document.querySelector('.progress').style.width = this.widthPercentage;
+        document.querySelector('#comp-progress .progress').style.width = this.widthPercentage;
     }
 }
 
