@@ -3,7 +3,7 @@ class CompNav extends HTMLElement {
         return `
              <nav id="comp-nav" class="default-primary-color">
                 <span class="nav-title text-primary-color">nature's Blog</span>
-                <span class="blog-title secondary-text-color">5000 万以上资产的投资理财小技巧</span>
+                <span class="blog-title secondary-text-color">我的博客</span>
                 <div class="header-nav-list">
                     <a href="index.asp">主页</a>
                     <a target="_blank" href="html5_meter.asp">关于我</a>
@@ -34,6 +34,7 @@ class CompNav extends HTMLElement {
     }
 
     connectedCallback() {
+        document.querySelector('#comp-nav .blog-title').innerText = document.title;
         document.addEventListener("scroll", this.render);
         document.querySelector('#comp-nav .kite').addEventListener("click", this.kiteClick);
     }
@@ -66,7 +67,7 @@ class CompNav extends HTMLElement {
     };
 
     render = () => {
-        if (this.scrollTop > 300) {
+        if (this.scrollTop > 240) {
             document.querySelector('#comp-nav').className = 'default-primary-color active';
         } else {
             document.querySelector('#comp-nav').className = 'default-primary-color';
