@@ -25,6 +25,7 @@ class CompNav extends HTMLElement {
     constructor() {
         super();
         this._totalSkinNum = 7;
+        this.changeSkin();
         this.innerHTML = CompNav.template;
     }
 
@@ -52,7 +53,6 @@ class CompNav extends HTMLElement {
 
     changeSkin = () => {
         const skinNum = window.localStorage.getItem('skinNum');
-        console.log(skinNum);
         let tempSkinNum = `${Math.ceil(Math.random() * this._totalSkinNum)}`;
         if (skinNum === tempSkinNum) {
             if (skinNum< this._totalSkinNum) {
