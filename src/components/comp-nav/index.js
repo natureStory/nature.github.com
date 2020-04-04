@@ -1,11 +1,14 @@
 class CompNav extends HTMLElement {
     static get template() {
         return `
-             <nav id="">
-                <span>nature's Blog</span>
-                <a href="index.asp">Home</a>
-                <a href="html5_meter.asp">Previous</a>
-                <a href="html5_noscript.asp">Next</a>
+             <nav id="comp-nav" class="default-primary-color">
+                <span class="nav-title text-primary-color">nature's Blog</span>
+                <span class="blog-title secondary-text-color">title title title title title title</span>
+                <div class="header-nav-list">
+                    <a href="index.asp">主页</a>
+                    <a target="_blank" href="html5_meter.asp">关于我</a>
+                    <a target="_blank" href="http://github.com/natureStory">GitHub</a>
+                </div>
             </nav>
         `;
     }

@@ -3,7 +3,6 @@ class CompHeader extends HTMLElement {
         return `
             <header id="comp-header" class="default-primary-color">
                 <comp-progress></comp-progress>
-                <comp-nav></comp-nav>
                 <div class="header-title default-primary-color text-primary-color">
                     Keep It Simple Do It Well
                 </div>

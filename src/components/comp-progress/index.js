@@ -37,15 +37,13 @@ class CompProgress extends HTMLElement {
     // 元素被插入到DOM时执行，通常用来获取数据，设置默认属性。
     connectedCallback() {
         console.log('connected!!');
-        window.onscroll = (e) => {
-            this.render();
-        }
+        document.addEventListener("scroll", this.render);
     }
 
     // 元素从DOM移除时执行，通常用来做清理工作，例如取消事件监听和定时器。
     disconnectedCallback() {
         console.log('disconnected!');
-        window.onscroll = null;
+        document.removeEventListener("scroll", this.render);
     }
 
     // 元素关注的属性变化时执行，如果监听属性变化呢？
@@ -58,7 +56,7 @@ class CompProgress extends HTMLElement {
         console.log('adopted!');
     }
 
-    render() {
+    render = () => {
         document.querySelector('.progress').style.width = this.widthPercentage;
     }
 }
