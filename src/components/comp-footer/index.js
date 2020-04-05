@@ -3,7 +3,7 @@ class CompFooter extends HTMLElement {
         return `
             <div id="comp-footer">
                 <div class="my-like">高山仰止，景行行止，虽不能至，然心向往之————『诗经·小雅· 车舝』</div>
-                <div class="secondary-text-color">© 2018</div>
+                <div class="secondary-text-color">© 2020</div>
                 <div class="secondary-text-color">Powered by <a target="_blank" href="https://github.com/natureStory">NatureStory</a>.</div>
             </div>
         `;

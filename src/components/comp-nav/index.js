@@ -6,7 +6,7 @@ class CompNav extends HTMLElement {
                 <span class="blog-title secondary-text-color">我的博客</span>
                 <div class="header-nav-list">
                     <a href="/">主页</a>
-                    <a target="_blank" href="../../pages/aboutme.html">关于我</a>
+                    <a target="_blank" href="/src/pages/aboutme.html">关于我</a>
                     <a target="_blank" href="http://github.com/natureStory">GitHub</a>
                 </div>
                 <div class="skin-btn-box">
@@ -44,7 +44,8 @@ class CompNav extends HTMLElement {
         document.removeEventListener("click", this.kiteClick);
     }
 
-    kiteClick = () => {
+    kiteClick = (e) => {
+        e.stopPropagation();
         this.querySelector('.skin-btn-box').className = "skin-btn-box active";
         this.changeSkin();
         setTimeout(() => {
