@@ -33,7 +33,7 @@ class CompListArticle extends HTMLElement {
         const time = this.getAttribute('time');
         const content = this.getAttribute('content');
         this.querySelector('.articleTitle span').innerText = articleTitle;
-        this.querySelector('.articleTitle').href = `./src/pages/page${pageName}.html`;
+        this.querySelector('.articleTitle').href = `./src/pages/${pageName}.html`;
         this.querySelector('.time').innerText = time;
         this.querySelector('.content').innerHTML = content;
     }
