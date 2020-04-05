@@ -28,12 +28,12 @@ class CompListArticle extends HTMLElement {
     }
 
     connectedCallback() {
-        const id = this.getAttribute('id');
+        const pageName = this.getAttribute('pageName');
         const articleTitle = this.getAttribute('articleTitle');
         const time = this.getAttribute('time');
         const content = this.getAttribute('content');
         this.querySelector('.articleTitle span').innerText = articleTitle;
-        this.querySelector('.articleTitle').href = 'https://www.baidu.com';
+        this.querySelector('.articleTitle').href = `./src/pages/page${pageName}.html`;
         this.querySelector('.time').innerText = time;
         this.querySelector('.content').innerHTML = content;
     }

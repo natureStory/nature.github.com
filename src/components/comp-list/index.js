@@ -12,11 +12,11 @@ class CompList extends HTMLElement {
     }
 
     async connectedCallback() {
-        const listData = await fetch('./src/data/listData.json').then(data => data.json()).then(data => data);
+        const listData = await fetch('./src/data/listData.json').then(data => data.json());
         this.querySelector('#comp-list').innerHTML = listData.map(item => {
             return `
                 <comp-list-article
-                    id="${item.title}"
+                    pageName="${item.pageName}"
                     articleTitle="${item.articleTitle}"
                     time="${item.time}"
                     content="${item.content}"
