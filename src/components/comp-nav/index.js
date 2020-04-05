@@ -5,8 +5,8 @@ class CompNav extends HTMLElement {
                 <span class="nav-title text-primary-color">natureStory's Blog</span>
                 <span class="blog-title secondary-text-color">我的博客</span>
                 <div class="header-nav-list">
-                    <a href="index.asp">主页</a>
-                    <a target="_blank" href="html5_meter.asp">关于我</a>
+                    <a href="/">主页</a>
+                    <a target="_blank" href="../../pages/aboutme.html">关于我</a>
                     <a target="_blank" href="http://github.com/natureStory">GitHub</a>
                 </div>
                 <div class="skin-btn-box">
