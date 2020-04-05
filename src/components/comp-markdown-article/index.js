@@ -3,6 +3,7 @@ class CompMarkdownArticle extends HTMLElement {
     static get template() {
         return `
             <div id="comp-markdown-article">
+            加载中……
             </div>
         `;
     }
