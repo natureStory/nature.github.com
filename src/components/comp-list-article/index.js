@@ -14,7 +14,7 @@ class CompListArticle extends HTMLElement {
                 <div class="article-content">
                     <div class="time-content default-primary-color default-text-color">
                         <div class="time"></div>
-                        <a class="edit-tip default-primary-color text-primary-color">coding in Github</a>
+                        <a class="edit-tip default-primary-color text-primary-color">coding on Github</a>
                     </div>
                     <div class="content secondary-text-color"></div>
                 </div>
