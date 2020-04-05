@@ -1,5 +1,3 @@
-// import listData from '../../data/listData.json';
-
 class CompFooter extends HTMLElement {
     static get template() {
         return `

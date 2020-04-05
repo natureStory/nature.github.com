@@ -12,7 +12,7 @@ class CompList extends HTMLElement {
     }
 
     async connectedCallback() {
-        const listData = await fetch('./src/data/listData.json').then(data => data.json());
+        const listData = await fetch(`./src/data/listData.json?v=${Math.random()}`).then(data => data.json());
         this.querySelector('#comp-list').innerHTML = listData.map(item => {
             return `
                 <comp-list-article
