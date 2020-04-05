@@ -1,3 +1,4 @@
+import './comp-footer/index.js';
 import './comp-header/index.js';
 import './comp-list/index.js';
 import './comp-list-article/index.js';
