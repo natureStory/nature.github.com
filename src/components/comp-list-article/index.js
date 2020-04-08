@@ -34,6 +34,7 @@ class CompListArticle extends HTMLElement {
         const content = this.getAttribute('content');
         this.querySelector('.articleTitle span').innerText = articleTitle;
         this.querySelector('.articleTitle').href = `./src/pages/${pageName}.html`;
+        this.querySelector('.edit-tip').href = `https://github.com/natureStory/naturestory.github.io/tree/master/src/data/articles/${pageName}/index.md`;
         this.querySelector('.time').innerText = time;
         this.querySelector('.content').innerHTML = content;
     }
