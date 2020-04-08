@@ -17,7 +17,8 @@ class CompMarkdownArticle extends HTMLElement {
         const pageName = this.getAttribute('pageName');
         const article = await fetch(`../data/articles/${pageName}/index.md?v=${Math.random()}`).then(data => data.text());
         const converter = new showdown.Converter();
-        const html = converter.makeHtml(article);
+        let html = converter.makeHtml(article);
+        html = html.replace(/<img src="\.\//g, `<img src="../../src/data/articles/${pageName}/`);
         this.querySelector('#comp-markdown-article').innerHTML = html;
     }
 }
