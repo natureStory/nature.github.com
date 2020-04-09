@@ -5,7 +5,7 @@ class CompProgress extends HTMLElement {
     }
     static get template() {
         return `
-            <div id="comp-progress" class="default-primary-color">
+            <div id="comp-progress" class="">
                 <div class="progress accent-color"></div>
             </div>
         `;
