@@ -24,7 +24,7 @@ class CompNav extends HTMLElement {
 
     constructor() {
         super();
-        this._totalSkinNum = 7;
+        this._totalSkinNum = 20;
         this.changeSkin();
         this.innerHTML = CompNav.template;
     }
