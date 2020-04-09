@@ -1,16 +1,53 @@
 const fs = require('fs');//引用文件系统模块
-const path = '../src/data/articles';
+const showdown = require('../src/assets/js/showdown.min.js');
 
-const articleDirs = fs.readdirSync(path);
-console.log(articleDirs.map(dir => {
-    const obj = {}; //定义一个对象存放文件的路径和名字
-    obj.path = path; //路径
-    obj.filename = dir; //名字
-    debugger
-    return {
-        "pageName": dir,
-        "articleTitle": "解决 本地调试代码不发送 cookie的问题【重复登录失效】",
-        "time": "2020-3-17",
-        "content": "问题描述：昨天升级系统后，打开谷歌，登录本地项目调试(采用代理的方式访问后端测试接口)，发现一直登录不上去，报登录失效没有权限，记录了一下问题的查找和解决思路。"
-    };
-}));
+const config = {
+    articlesPath: '../src/data/articles',
+    articlesHtmlPath: '../src/pages',
+    articleTemplatePath: './article-template.html',
+    listDataPath: '../src/data/listData.json'
+};
+deleteHtml();
+createHtmlAndData();
+
+function deleteHtml() {
+    const articleHtmls = fs.readdirSync(config.articlesHtmlPath)
+        .filter(item => item.indexOf('page.html') > -1)
+        .forEach(item => {
+            fs.unlinkSync(`${config.articlesHtmlPath}/${item}`);
+        });
+}
+function createHtmlAndData() {
+    const articleDirs = fs.readdirSync(config.articlesPath);
+    const listData = articleDirs.map(dir => {
+        const article = fs.readFileSync(`${config.articlesPath}/${dir}/index.md`).toString();
+        // console.log(fs.statSync(`${config.articlesPath}/${dir}/index.md`)); // 读取文件信息
+        const converter = new showdown.Converter();
+        let html = converter.makeHtml(article).split('\n');
+        const articleTitle = delHtmlTag(html[0]);
+        const content = delHtmlTag(html[1]);
+        const articleTemplate = fs.readFileSync(config.articleTemplatePath).toString();
+        const articleHtml = articleTemplate.replace('{{pageName}}', dir).replace('{{articleTitle}}', articleTitle);
+        const writeStream = fs.createWriteStream(`${config.articlesHtmlPath}/${dir}.html`, {encoding:'utf8'});
+        writeStream.write(articleHtml);
+        writeStream.end();
+        return {
+            pageName: dir,
+            time: dir.replace(/\./ig, '-').replace('page', ''),
+            articleTitle,
+            content
+        };
+    });
+    listData.sort((a, b) => a.time - b.time).reverse();
+    fs.writeFile(config.listDataPath,JSON.stringify(listData),'utf8',function(err){
+        //如果err=null，表示文件使用成功，否则，表示希尔文件失败
+        if(err)
+            console.log('listData 写入错误，原因：'+err);
+        else
+            console.log('listData 数据写入成功！');
+    })
+}
+
+function delHtmlTag(str){
+    return str.replace(/<[^>]+>/g,"");  //正则去掉所有的html标记
+}
