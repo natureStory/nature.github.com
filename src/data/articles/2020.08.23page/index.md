@@ -13,7 +13,7 @@ jison
 A && B && ( C || D ) && ( E || F )
 
 ## 分享ppt
-[分享.pptx](http://view.officeapps.live.com/op/view.aspx?src=https://naturestory.github.io/src/data/articles/2020.08.23page/1.pptx)
+[分享.pptx](http://view.officeapps.live.com/op/view.aspx?src=https://naturestory.github.io/src/data/articles/2020.08.23page/分享.pptx)
 
 ## 可视化后的结果
 ![image.png](./1.png)
